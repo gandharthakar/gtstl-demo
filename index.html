@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GT SecureToken Browser Examples | Quick Demo</title>
+    <title>GT Token Browser Examples | Quick Demo</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="dist/gt-secure-token.js"></script>
+    <script src="dist/gt-token.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -239,7 +239,7 @@
         const vanSecInp = document.querySelector("#vanSec");
         const expVanInp = document.querySelector("#expVan");
         const vanResult = document.querySelector("#vanilla-result .inner");
-        const token = new GTSecureToken(vanSecInp.value);
+        const token = new GTToken(vanSecInp.value);
 
         let vanResObj = {
             token_data: '',
@@ -306,7 +306,7 @@
             const jqSecInp = $("#jqSec");
             const jqExpInp = $("#expJq");
             const jqResult = $("#jquery-result .inner");
-            const jqToken = new GTSecureToken(jqSecInp.val());
+            const jqToken = new GTToken(jqSecInp.val());
 
             let jqResObj = {
                 token_data: '',
