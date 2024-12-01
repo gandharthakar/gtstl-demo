@@ -270,6 +270,7 @@
         }
 
         const decryptData = async () => {
+            vanResult.textContent = '';
             try {
                 if (!currentToken) {
                     throw new Error('Please encrypt data first');
@@ -280,7 +281,12 @@
                 const obj = { ...vanResObj, decrypted_data: decrypted };
                 vanResult.textContent = JSON.stringify(obj, undefined, 1);
             } catch (error) {
-                vanResult.textContent = `Error: ${error.message}`;
+                if (error instanceof GTToken.InvalidSecretError) {
+                    throw new Error('Secret key is not valid.');
+                    vanResult.textContent = `Error: Secret key is not valid.`;
+                } else {
+                    vanResult.textContent = `Error: ${error.message}`;
+                }
             }
         }
 
